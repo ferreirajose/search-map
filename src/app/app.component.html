@@ -1,32 +1,5 @@
 <app-header></app-header>
-  <main role="main" class="main">
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1>Album example</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-        <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-        </p>
-      </div>
-    </section>
-    <div class="row">
-
-      <div class="col-md-12">
-
-        <h1>Magalu Maps</h1>
-
-        <div class="form-group">
-          <label>Enter address</label>
-          <input type="text" class="form-control" placeholder="Informe CEP" autocorrect="off" autocapitalize="off"
-            spellcheck="off" type="text" />
-        </div>
-
-        <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
-          <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"></agm-marker>
-        </agm-map>
-      </div>
-    </div>
-  </main>
+<main role="main" class="main">
+  <router-outlet></router-outlet>
+</main>
 <app-footer></app-footer>
-<router-outlet></router-outlet>
