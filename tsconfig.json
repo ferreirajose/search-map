@@ -14,8 +14,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@env/*": ["src/environments/*"]
+    }
   },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"],
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true

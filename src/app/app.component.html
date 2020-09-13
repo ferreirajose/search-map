@@ -10,6 +10,23 @@
         </p>
       </div>
     </section>
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <h1>Magalu Maps</h1>
+
+        <div class="form-group">
+          <label>Enter address</label>
+          <input type="text" class="form-control" placeholder="Informe CEP" autocorrect="off" autocapitalize="off"
+            spellcheck="off" type="text" />
+        </div>
+
+        <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+          <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"></agm-marker>
+        </agm-map>
+      </div>
+    </div>
   </main>
 <app-footer></app-footer>
 <router-outlet></router-outlet>
