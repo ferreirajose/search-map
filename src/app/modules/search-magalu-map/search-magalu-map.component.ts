@@ -49,7 +49,7 @@ export class SearchMagaluMapComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadMap();
-    this.setCurrentLocation();
+    // this.setCurrentLocation();
   }
 
   private loadMap(): void {

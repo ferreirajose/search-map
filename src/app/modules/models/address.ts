@@ -1,4 +1,4 @@
-export interface Adress {
+export interface Address {
   bairro: string;
   cep: string;
   complemento: string;

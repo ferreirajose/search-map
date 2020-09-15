@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [{
   path: 'home',
-  loadChildren: () => import("../app/modules/search-magalu-map/search-magalu-map.module").then(m => m.SearchMagaluMapModule)
+  loadChildren: () => import('@modules/search-magalu-map/search-magalu-map.module').then(m => m.SearchMagaluMapModule)
 }];
 
 @NgModule({

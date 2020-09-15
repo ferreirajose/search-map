@@ -1,7 +1,9 @@
-import { Adress } from './../../modules/models/adress';
-import { MapsService } from './../../modules/services/maps.service';
+
+import { MapsService } from '@modules/services/maps.service';
 import { Component, OnInit } from '@angular/core';
+import { switchMap } from 'rxjs/operators';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Address } from '@modules/models/address';
 
 @Component({
   selector: 'app-nav-bar',
@@ -26,8 +28,17 @@ export class NavBarComponent implements OnInit {
 
   public search(): void {
     const { zipCode } = this.formMaps.value;
-    this.mapsService.getAdress(zipCode).subscribe((adress: Adress) => {
-      console.log(adress);
+    // this.mapsService.getAdress(zipCode).subscribe((adress: Address) => {
+    //   console.log(adress);
+    // }, (erro) => {
+    //   console.log(erro);
+    // });
+
+
+    this.mapsService.getAdress(zipCode).pipe(
+      switchMap(address => this.mapsService.getLatitudeLongitude(address.localidade))
+    ).subscribe((latLon) => {
+      console.log(latLon);
     }, (erro) => {
       console.log(erro);
     });
